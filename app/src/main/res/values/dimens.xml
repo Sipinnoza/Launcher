@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="app_icon_size">16dp</dimen> <!-- 图标尺寸 -->
+    <dimen name="app_icon_margin_bottom">2dp</dimen> <!-- 图标底部间距 -->
+    <dimen name="app_text_size">5sp</dimen> <!-- 文字大小 -->
+    <integer name="app_text_max_ems">8</integer> <!-- 文字最大ems宽度 -->
+</resources>

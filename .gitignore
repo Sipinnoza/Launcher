@@ -1,0 +1,40 @@
+# Kotlin & Java
+*.iml
+*.class
+.idea
+
+# Android Studio
+.gradle
+/local.properties
+/.idea/*
+.DS_Store
+/build
+/captures
+.cxx
+.externalNativeBuild
+**/test/
+**/androidTest/
+/app/release
+
+# NDK
+obj/
+*.so
+
+# OS
+Thumbs.db
+ehthumbs.db
+
+# Logs
+*.log
+
+# Others
+*.apk
+*.ap_
+
+# Generated files
+gen/
+out/
+
+# Keystore
+*.jks
+*.keystore

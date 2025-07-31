@@ -1,0 +1,4 @@
+#Thu Jul 31 15:22:51 CST 2025
+base.0=/home/zeus/AndroidStudioProjects/Launcher/app/build/intermediates/dex/release/minifyReleaseWithR8/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
