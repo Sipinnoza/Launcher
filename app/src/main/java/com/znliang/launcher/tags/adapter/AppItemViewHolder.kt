@@ -17,12 +17,9 @@ class AppItemViewHolder(private val itemView: View){
     private val imageView: ImageView = itemView.findViewById(R.id.app_icon)
     private val textView: TextView = itemView.findViewById(R.id.app_label)
 
-    fun bind(app: AppInfo, onAppClick: (AppInfo) -> Unit) {
+    fun bind(app: AppInfo) {
         imageView.setImageDrawable(app.icon)
         textView.text = app.label
-        itemView.setOnClickListener {
-            onAppClick(app)
-        }
     }
 
     fun getView(): View = itemView

@@ -16,6 +16,8 @@ drawable ic_launcher_background
 drawable ic_launcher_foreground
 id app_icon
 id app_label
+id menu_add_widget
+id menu_uninstall
 id root_container
 id searchView
 id search_result
@@ -24,6 +26,7 @@ id tag_container
 integer app_text_max_ems
 layout activity_main
 layout item_app
+menu app_long_press_menu
 string app_name
 style Theme.Launcher
 xml backup_rules

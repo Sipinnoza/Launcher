@@ -6,12 +6,10 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.Choreographer
 import android.view.MotionEvent
-import android.view.View
 import android.view.ViewConfiguration
 import android.view.ViewGroup
 import android.view.WindowManager
 import com.znliang.launcher.tags.adapter.TagsAdapter
-import com.znliang.launcher.tags.listener.ITagClickListener
 import com.znliang.launcher.tags.mode.TagScrollMode
 import kotlin.math.abs
 import kotlin.math.absoluteValue
@@ -53,7 +51,6 @@ class TagCloudView @JvmOverloads constructor(
     private val choreographer = Choreographer.getInstance()
     private val frameCallback = Choreographer.FrameCallback { run() }
     private var adapter: TagsAdapter? = null
-    private var onTagClickListener: ITagClickListener? = null
     private var downX: Float = 0f
     private var downY: Float = 0f
     private val touchSlop: Int = ViewConfiguration.get(context).scaledTouchSlop
@@ -111,7 +108,6 @@ class TagCloudView @JvmOverloads constructor(
                             view = adapter.getView(context, i, this@TagCloudView)
                         }
                         add(tag)
-                        tag.view?.let { addListener(it, i) }
                     }
                 }
                 setInertia(inertiaX, inertiaY)
@@ -120,19 +116,6 @@ class TagCloudView @JvmOverloads constructor(
             }
             refreshChildrenViews()
             layoutChildren()
-        }
-    }
-
-    /**
-     * 为 Tag 视图添加点击事件监听器（仅在未设置的情况下）。
-     */
-    private fun addListener(view: View, position: Int) {
-        if (!view.hasOnClickListeners()) {
-            onTagClickListener?.let { listener ->
-                view.setOnClickListener {
-                    listener.onItemClick(this, it, position)
-                }
-            }
         }
     }
 
@@ -236,7 +219,6 @@ class TagCloudView @JvmOverloads constructor(
                 tag.view?.let {
                     (it.parent as? ViewGroup)?.removeView(it)
                     addView(it)
-                    addListener(it, index)
                 }
             }
         } else {
@@ -248,7 +230,6 @@ class TagCloudView @JvmOverloads constructor(
                     tag.view?.let {
                         (it.parent as? ViewGroup)?.removeView(it)
                         addView(it, index)
-                        addListener(it, index)
                     }
                 }
             }
@@ -348,8 +329,8 @@ class TagCloudView @JvmOverloads constructor(
     companion object {
         private const val DEFAULT_SPEED = 2f
         private const val DEFAULT_INERTIA = 0.5f
-        private const val DEFAULT_RADIUS_PERCENT = 0.9f
-        private const val TOUCH_SCALE_FACTOR = 0.8f
+        private const val DEFAULT_RADIUS_PERCENT = 0.7f
+        private const val TOUCH_SCALE_FACTOR = 0.4f
         // 固定自动滚动速度，即目标惯性
         private const val FIXED_AUTO_SCROLL_SPEED = 0.2f
         // 每帧调整惯性步长（可调节平滑度）

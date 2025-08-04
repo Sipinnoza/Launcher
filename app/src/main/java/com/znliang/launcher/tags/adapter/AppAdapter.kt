@@ -3,12 +3,10 @@ package com.znliang.launcher.tags.adapter
 import android.content.Context
 import android.view.View
 import android.view.ViewGroup
+import com.znliang.launcher.tags.listener.ITagClickListener
 import com.znliang.launcher.tags.model.AppInfo
 
-class AppAdapter(
-    private var tags: List<AppInfo>,
-    private val onAppClick: (app: AppInfo) -> Unit
-) : TagsAdapter() {
+class AppAdapter(private var tags: List<AppInfo>, private val onTagClickListener: ITagClickListener? = null) : TagsAdapter() {
 
     private val viewCache = mutableMapOf<AppInfo, View>()
 
@@ -24,9 +22,10 @@ class AppAdapter(
         }
 
         val holder = AppItemViewHolder.create(ctx)
-        holder.bind(app, onAppClick)
+        holder.bind(app)
 
         val newView = holder.getView()
+        addListener(newView, app)
         viewCache[app] = newView
 
         return newView
@@ -38,5 +37,28 @@ class AppAdapter(
 
     override fun onThemeColorChanged(view: View?, themeColor: Int, alpha: Float) {
         view?.alpha = alpha
+    }
+
+
+    /**
+     * 为 Tag 视图添加点击事件监听器（仅在未设置的情况下）。
+     */
+    private fun addListener(view: View, app: AppInfo) {
+        if (!view.hasOnClickListeners()) {
+            onTagClickListener?.let { listener ->
+                view.setOnClickListener {
+                    listener.onItemClick(app)
+                }
+            }
+        }
+
+        if (!view.hasOnLongClickListeners()) {
+            onTagClickListener?.let { listener ->
+                view.setOnLongClickListener {
+                    listener.onItemLongPress(app)
+                    true
+                }
+            }
+        }
     }
 }

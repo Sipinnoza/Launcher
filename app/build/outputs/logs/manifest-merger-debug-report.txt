@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:2:1-34:12
-INJECTED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:2:1-34:12
-INJECTED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:2:1-34:12
-INJECTED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:2:1-34:12
+ADDED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:2:1-31:12
+INJECTED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:2:1-31:12
+INJECTED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:2:1-31:12
+INJECTED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:2:1-31:12
 MERGED from [androidx.appcompat:appcompat-resources:1.7.1] /home/zeus/.gradle/caches/8.13/transforms/1b371cb773591e5da47a7506416d9bf2/transformed/appcompat-resources-1.7.1/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.appcompat:appcompat:1.7.1] /home/zeus/.gradle/caches/8.13/transforms/c32ea1e2cc09d5a1d6321c14cd15c8c8/transformed/appcompat-1.7.1/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.recyclerview:recyclerview:1.4.0] /home/zeus/.gradle/caches/8.13/transforms/b266e647491313ad87a53479e6aa1790/transformed/recyclerview-1.4.0/AndroidManifest.xml:2:1-7:12
@@ -44,31 +44,25 @@ MERGED from [androidx.core:core-viewtree:1.0.0] /home/zeus/.gradle/caches/8.13/t
 		INJECTED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml
-	xmlns:tools
-		ADDED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:2:11-57
 	android:versionCode
 		INJECTED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:3:5-63
-uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:5:5-79
-	android:name
-		ADDED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:5:22-77
+		ADDED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:2:11-69
 queries
-ADDED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:7:5-12:15
+ADDED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:4:5-9:15
 intent#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:8:9-11:18
+ADDED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:5:9-8:18
 action#android.intent.action.MAIN
-ADDED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:9:13-65
+ADDED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:6:13-65
 	android:name
-		ADDED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:9:21-62
+		ADDED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:6:21-62
 category#android.intent.category.LAUNCHER
-ADDED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:10:13-73
+ADDED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:7:13-73
 	android:name
-		ADDED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:10:23-70
+		ADDED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:7:23-70
 application
-ADDED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:14:5-32:19
-INJECTED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:14:5-32:19
+ADDED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:11:5-29:19
+INJECTED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:11:5-29:19
 MERGED from [androidx.emoji2:emoji2:1.3.0] /home/zeus/.gradle/caches/8.13/transforms/492e0f9c1c9f424466fbb3ce6003e914/transformed/emoji2-1.3.0/AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.emoji2:emoji2:1.3.0] /home/zeus/.gradle/caches/8.13/transforms/492e0f9c1c9f424466fbb3ce6003e914/transformed/emoji2-1.3.0/AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] /home/zeus/.gradle/caches/8.13/transforms/d92a8d1cabeb54137b059ba833b51a0b/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:23:5-33:19
@@ -86,29 +80,29 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] /home/zeus/.gradle/caches/8
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.13.0] /home/zeus/.gradle/caches/8.13/transforms/c938bf1fef82acf6cd3b6958beadab90/transformed/core-1.13.0/AndroidManifest.xml:28:18-86
 	android:label
-		ADDED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:17:9-41
+		ADDED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:14:9-41
 	android:icon
-		ADDED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:16:9-56
+		ADDED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:13:9-56
 	android:allowBackup
-		ADDED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:15:9-35
+		ADDED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:12:9-35
 	android:theme
-		ADDED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:18:9-65
+		ADDED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:15:9-65
 activity#com.znliang.launcher.main.MainActivity
-ADDED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:20:9-30:20
+ADDED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:17:9-27:20
 	android:exported
-		ADDED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:22:13-36
+		ADDED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:19:13-36
 	android:name
-		ADDED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:21:13-46
+		ADDED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:18:13-46
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.DEFAULT+category:name:android.intent.category.HOME+category:name:android.intent.category.LAUNCHER
-ADDED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:23:13-29:29
+ADDED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:20:13-26:29
 category#android.intent.category.HOME
-ADDED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:25:17-73
+ADDED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:22:17-73
 	android:name
-		ADDED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:25:27-70
+		ADDED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:22:27-70
 category#android.intent.category.DEFAULT
-ADDED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:26:17-76
+ADDED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:23:17-76
 	android:name
-		ADDED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:26:27-73
+		ADDED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml:23:27-73
 uses-sdk
 INJECTED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/zeus/AndroidStudioProjects/Launcher/app/src/main/AndroidManifest.xml

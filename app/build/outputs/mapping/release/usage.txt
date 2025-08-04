@@ -47,6 +47,8 @@ com.znliang.launcher.R$integer:
 com.znliang.launcher.R$layout:
     public static int item_app
     private void <init>()
+com.znliang.launcher.R$menu:
+    private void <init>()
 com.znliang.launcher.R$string:
     private void <init>()
 com.znliang.launcher.R$style
@@ -56,6 +58,12 @@ com.znliang.launcher.main.MainIntent$LaunchApp:
     public final com.znliang.launcher.tags.model.AppInfo component1()
     public final com.znliang.launcher.main.MainIntent$LaunchApp copy(com.znliang.launcher.tags.model.AppInfo)
     public static synthetic com.znliang.launcher.main.MainIntent$LaunchApp copy$default(com.znliang.launcher.main.MainIntent$LaunchApp,com.znliang.launcher.tags.model.AppInfo,int,java.lang.Object)
+com.znliang.launcher.main.MainIntent$LongPress:
+    public final com.znliang.launcher.tags.model.AppInfo component1()
+    public final android.content.Context component2()
+    public final android.view.View component3()
+    public final com.znliang.launcher.main.MainIntent$LongPress copy(com.znliang.launcher.tags.model.AppInfo,android.content.Context,android.view.View)
+    public static synthetic com.znliang.launcher.main.MainIntent$LongPress copy$default(com.znliang.launcher.main.MainIntent$LongPress,com.znliang.launcher.tags.model.AppInfo,android.content.Context,android.view.View,int,java.lang.Object)
 com.znliang.launcher.main.MainIntent$PageStateChanged:
     public final boolean component1()
     public final com.znliang.launcher.main.MainIntent$PageStateChanged copy(boolean)
@@ -6956,6 +6964,7 @@ com.znliang.launcher.R$dimen
 com.znliang.launcher.R$id
 com.znliang.launcher.R$integer
 com.znliang.launcher.R$layout
+com.znliang.launcher.R$menu
 com.znliang.launcher.R$string
 com.znliang.launcher.main.MainActivity$onCreate$1$1:
     public int label
@@ -6968,8 +6977,14 @@ com.znliang.launcher.main.MainActivity$special$$inlined$viewModels$default$2:
 com.znliang.launcher.main.MainActivity$special$$inlined$viewModels$default$3:
     public final synthetic kotlin.jvm.functions.Function0 $extrasProducer
     public final androidx.lifecycle.viewmodel.CreationExtras invoke()
+com.znliang.launcher.main.MainActivity:
+    public final com.znliang.launcher.main.MainActivity$packageChangedReceiver$1 packageChangedReceiver
 com.znliang.launcher.main.MainIntent$LaunchApp:
-    public static com.znliang.launcher.tags.model.AppInfo getApp()
+    public final com.znliang.launcher.tags.model.AppInfo getApp()
+com.znliang.launcher.main.MainIntent$LongPress:
+    public static android.view.View getAnchor()
+    public final com.znliang.launcher.tags.model.AppInfo getApp()
+    public static android.content.Context getContext()
 com.znliang.launcher.main.MainIntent$PageStateChanged:
     public static boolean getTagZoomIn()
 com.znliang.launcher.main.MainIntent$SearchQueryChanged:
@@ -7304,13 +7319,13 @@ kotlinx.coroutines.CompletionStateKt:
     public static java.lang.Object toState$default(java.lang.Object)
 kotlinx.coroutines.CopyableThreadContextElement
 kotlinx.coroutines.CopyableThrowable
-kotlinx.coroutines.CoroutineContextKt$$InternalSyntheticThrowCCEIfNotNull$19$5569582777507d4d7fe62d23d961118334e1e9c4c63eadc907f5f42be70b4b0a$0
-kotlinx.coroutines.CoroutineContextKt$foldCopies$1$$InternalSyntheticThrowCCEIfNotNull$17$302235166a43584c18b0dd9c18e28fab4eb24f1f0e6ac4aea89e8692dc0fb8dc$0
+kotlinx.coroutines.CoroutineContextKt$$InternalSyntheticThrowCCEIfNotNull$18$5569582777507d4d7fe62d23d961118334e1e9c4c63eadc907f5f42be70b4b0a$0
+kotlinx.coroutines.CoroutineContextKt$foldCopies$1$$InternalSyntheticThrowCCEIfNotNull$16$302235166a43584c18b0dd9c18e28fab4eb24f1f0e6ac4aea89e8692dc0fb8dc$0
 kotlinx.coroutines.CoroutineContextKt$foldCopies$1:
     public final kotlin.coroutines.CoroutineContext invoke()
-kotlinx.coroutines.CoroutineContextKt$foldCopies$folded$1$$InternalSyntheticThrowCCEIfNotNull$21$84dfd757359edc0df305dc2fef81ae068334ded0bb14f3c5e2ae0d6f7d811109$0
-kotlinx.coroutines.CoroutineContextKt$foldCopies$folded$1$$InternalSyntheticThrowCCEIfNotNull$21$84dfd757359edc0df305dc2fef81ae068334ded0bb14f3c5e2ae0d6f7d811109$1
-kotlinx.coroutines.CoroutineContextKt$foldCopies$folded$1$$InternalSyntheticThrowCCEIfNotNull$21$84dfd757359edc0df305dc2fef81ae068334ded0bb14f3c5e2ae0d6f7d811109$2
+kotlinx.coroutines.CoroutineContextKt$foldCopies$folded$1$$InternalSyntheticThrowCCEIfNotNull$20$84dfd757359edc0df305dc2fef81ae068334ded0bb14f3c5e2ae0d6f7d811109$0
+kotlinx.coroutines.CoroutineContextKt$foldCopies$folded$1$$InternalSyntheticThrowCCEIfNotNull$20$84dfd757359edc0df305dc2fef81ae068334ded0bb14f3c5e2ae0d6f7d811109$1
+kotlinx.coroutines.CoroutineContextKt$foldCopies$folded$1$$InternalSyntheticThrowCCEIfNotNull$20$84dfd757359edc0df305dc2fef81ae068334ded0bb14f3c5e2ae0d6f7d811109$2
 kotlinx.coroutines.CoroutineContextKt$foldCopies$folded$1:
     public final synthetic boolean $isNewCoroutine
     public final synthetic kotlin.jvm.internal.Ref$ObjectRef $leftoverContext
@@ -7330,8 +7345,8 @@ kotlinx.coroutines.CoroutineExceptionHandler:
     public abstract void handleException()
 kotlinx.coroutines.CoroutineExceptionHandlerKt:
     public static final java.lang.Throwable handlerException(java.lang.Throwable,java.lang.Throwable)
-kotlinx.coroutines.CoroutineId$$InternalSyntheticThrowCCEIfNotNull$182$a7d8b984f14ef6811fc36f0d030a1c8a7f27075d192601697212118d266ca07a$0
-kotlinx.coroutines.CoroutineId$$InternalSyntheticThrowCCEIfNotNull$21$db4fcf294f73e0414b61d779f72a560fad56831e560e6b71def36fecaf64a8d1$0
+kotlinx.coroutines.CoroutineId$$InternalSyntheticThrowCCEIfNotNull$178$a7d8b984f14ef6811fc36f0d030a1c8a7f27075d192601697212118d266ca07a$0
+kotlinx.coroutines.CoroutineId$$InternalSyntheticThrowCCEIfNotNull$20$db4fcf294f73e0414b61d779f72a560fad56831e560e6b71def36fecaf64a8d1$0
 kotlinx.coroutines.CoroutineId$Key
 kotlinx.coroutines.CoroutineId
 kotlinx.coroutines.CoroutineName$Key
@@ -7479,7 +7494,7 @@ kotlinx.coroutines.ThreadLocalEventLoop:
     public static void resetEventLoop$kotlinx_coroutines_core()
     public static void setEventLoop$kotlinx_coroutines_core()
 kotlinx.coroutines.TimeoutCancellationException
-kotlinx.coroutines.Unconfined$$InternalSyntheticThrowCCEIfNotNull$19$72ceb2a77612d0aa4343e3265f35afc56f24380adaa84607f12137d74dc8eb77$0
+kotlinx.coroutines.Unconfined$$InternalSyntheticThrowCCEIfNotNull$18$72ceb2a77612d0aa4343e3265f35afc56f24380adaa84607f12137d74dc8eb77$0
 kotlinx.coroutines.Unconfined:
     public static final kotlinx.coroutines.Unconfined INSTANCE
     static void <clinit>()
@@ -7518,22 +7533,22 @@ kotlinx.coroutines.channels.BufferedChannel$$InternalSyntheticBackportWithForwar
 kotlinx.coroutines.channels.BufferedChannel$$InternalSyntheticBackportWithForwarding$2$2105e1ea3ef3bda839c305fd265ab88fb1603d88dab3dd2e5ef2e0e166592324$0
 kotlinx.coroutines.channels.BufferedChannel$$InternalSyntheticBackportWithForwarding$2$2105e1ea3ef3bda839c305fd265ab88fb1603d88dab3dd2e5ef2e0e166592324$1
 kotlinx.coroutines.channels.BufferedChannel$$InternalSyntheticBackportWithForwarding$2$41641a56641855d807a333abf897296fa2531140a0b21ecf112eca7ca5040b4f$0
-kotlinx.coroutines.channels.BufferedChannel$$InternalSyntheticThrowCCEIfNotNull$36$ede10579b622c50962ff73dd2f82c141abf9f8a33531ab07fe72fe1a6b92cb41$0
-kotlinx.coroutines.channels.BufferedChannel$$InternalSyntheticThrowCCEIfNotNull$36$ede10579b622c50962ff73dd2f82c141abf9f8a33531ab07fe72fe1a6b92cb41$1
-kotlinx.coroutines.channels.BufferedChannel$$InternalSyntheticThrowCCEIfNotNull$36$ede10579b622c50962ff73dd2f82c141abf9f8a33531ab07fe72fe1a6b92cb41$2
-kotlinx.coroutines.channels.BufferedChannel$$InternalSyntheticThrowCCEIfNotNull$38$1bb6e5cf839f3124517897dcbfa0502b9b5985320d9fac2dcb2d5f0b0cf2bdf9$0
-kotlinx.coroutines.channels.BufferedChannel$$InternalSyntheticThrowCCEIfNotNull$38$1bb6e5cf839f3124517897dcbfa0502b9b5985320d9fac2dcb2d5f0b0cf2bdf9$1
-kotlinx.coroutines.channels.BufferedChannel$$InternalSyntheticThrowCCEIfNotNull$38$1bb6e5cf839f3124517897dcbfa0502b9b5985320d9fac2dcb2d5f0b0cf2bdf9$2
-kotlinx.coroutines.channels.BufferedChannel$$InternalSyntheticThrowCCEIfNotNull$38$1bb6e5cf839f3124517897dcbfa0502b9b5985320d9fac2dcb2d5f0b0cf2bdf9$3
-kotlinx.coroutines.channels.BufferedChannel$$InternalSyntheticThrowCCEIfNotNull$40$477558f47305b46a97e98327e82dc157ded03b2c689ba9650782ad95656735aa$0
-kotlinx.coroutines.channels.BufferedChannel$$InternalSyntheticThrowCCEIfNotNull$40$477558f47305b46a97e98327e82dc157ded03b2c689ba9650782ad95656735aa$1
-kotlinx.coroutines.channels.BufferedChannel$$InternalSyntheticThrowCCEIfNotNull$40$477558f47305b46a97e98327e82dc157ded03b2c689ba9650782ad95656735aa$2
+kotlinx.coroutines.channels.BufferedChannel$$InternalSyntheticThrowCCEIfNotNull$35$ede10579b622c50962ff73dd2f82c141abf9f8a33531ab07fe72fe1a6b92cb41$0
+kotlinx.coroutines.channels.BufferedChannel$$InternalSyntheticThrowCCEIfNotNull$35$ede10579b622c50962ff73dd2f82c141abf9f8a33531ab07fe72fe1a6b92cb41$1
+kotlinx.coroutines.channels.BufferedChannel$$InternalSyntheticThrowCCEIfNotNull$35$ede10579b622c50962ff73dd2f82c141abf9f8a33531ab07fe72fe1a6b92cb41$2
+kotlinx.coroutines.channels.BufferedChannel$$InternalSyntheticThrowCCEIfNotNull$37$1bb6e5cf839f3124517897dcbfa0502b9b5985320d9fac2dcb2d5f0b0cf2bdf9$0
+kotlinx.coroutines.channels.BufferedChannel$$InternalSyntheticThrowCCEIfNotNull$37$1bb6e5cf839f3124517897dcbfa0502b9b5985320d9fac2dcb2d5f0b0cf2bdf9$1
+kotlinx.coroutines.channels.BufferedChannel$$InternalSyntheticThrowCCEIfNotNull$37$1bb6e5cf839f3124517897dcbfa0502b9b5985320d9fac2dcb2d5f0b0cf2bdf9$2
+kotlinx.coroutines.channels.BufferedChannel$$InternalSyntheticThrowCCEIfNotNull$37$1bb6e5cf839f3124517897dcbfa0502b9b5985320d9fac2dcb2d5f0b0cf2bdf9$3
+kotlinx.coroutines.channels.BufferedChannel$$InternalSyntheticThrowCCEIfNotNull$39$477558f47305b46a97e98327e82dc157ded03b2c689ba9650782ad95656735aa$0
+kotlinx.coroutines.channels.BufferedChannel$$InternalSyntheticThrowCCEIfNotNull$39$477558f47305b46a97e98327e82dc157ded03b2c689ba9650782ad95656735aa$1
+kotlinx.coroutines.channels.BufferedChannel$$InternalSyntheticThrowCCEIfNotNull$39$477558f47305b46a97e98327e82dc157ded03b2c689ba9650782ad95656735aa$2
 kotlinx.coroutines.channels.BufferedChannel$BufferedChannelIterator:
     public final java.lang.Object next()
     public static boolean tryResumeHasNext()
     public static void tryResumeHasNextOnClosedChannel()
 kotlinx.coroutines.channels.BufferedChannel$SendBroadcast
-kotlinx.coroutines.channels.BufferedChannel$onUndeliveredElementReceiveCancellationConstructor$1$1$$InternalSyntheticThrowCCEIfNotNull$12$ad20d2dfc40061938e346842c088c117495dc6fb8f9f0e1a51b8cba2c8317666$0
+kotlinx.coroutines.channels.BufferedChannel$onUndeliveredElementReceiveCancellationConstructor$1$1$$InternalSyntheticThrowCCEIfNotNull$11$ad20d2dfc40061938e346842c088c117495dc6fb8f9f0e1a51b8cba2c8317666$0
 kotlinx.coroutines.channels.BufferedChannel$onUndeliveredElementReceiveCancellationConstructor$1$1$1
 kotlinx.coroutines.channels.BufferedChannel$onUndeliveredElementReceiveCancellationConstructor$1$1
 kotlinx.coroutines.channels.BufferedChannel:
@@ -7615,7 +7630,7 @@ kotlinx.coroutines.flow.FlowKt
 kotlinx.coroutines.flow.FlowKt__BuildersKt
 kotlinx.coroutines.flow.FlowKt__CollectKt
 kotlinx.coroutines.flow.FlowKt__ContextKt
-kotlinx.coroutines.flow.FlowKt__EmittersKt$$InternalSyntheticThrowCCEIfNotNull$8$e725080ea2baf136ff3783a601e7cc03c4c9f6d9080b74e99a4753b5bc3a90b1$0
+kotlinx.coroutines.flow.FlowKt__EmittersKt$$InternalSyntheticThrowCCEIfNotNull$7$e725080ea2baf136ff3783a601e7cc03c4c9f6d9080b74e99a4753b5bc3a90b1$0
 kotlinx.coroutines.flow.FlowKt__EmittersKt
 kotlinx.coroutines.flow.FlowKt__MergeKt$mapLatest$1:
     public static java.lang.Object invoke$2()
@@ -7631,7 +7646,7 @@ kotlinx.coroutines.flow.ReadonlyStateFlow:
 kotlinx.coroutines.flow.SharedFlow
 kotlinx.coroutines.flow.SharedFlowImpl
 kotlinx.coroutines.flow.SharedFlowKt
-kotlinx.coroutines.flow.StateFlowImpl$$InternalSyntheticThrowCCEIfNotNull$160$f1d1f40a1c8fc04c0a8d71575b6c25dc238f9224ed939db2b509a92e2c81cbda$0
+kotlinx.coroutines.flow.StateFlowImpl$$InternalSyntheticThrowCCEIfNotNull$124$f1d1f40a1c8fc04c0a8d71575b6c25dc238f9224ed939db2b509a92e2c81cbda$0
 kotlinx.coroutines.flow.StateFlowImpl:
     public static kotlinx.coroutines.flow.StateFlowSlot createSlot()
     public final kotlinx.coroutines.flow.internal.AbstractSharedFlowSlot createSlot()
@@ -7714,7 +7729,7 @@ kotlinx.coroutines.internal.ConcurrentLinkedListNode:
     public final boolean isTail()
     public abstract boolean markAsClosed()
     public abstract boolean trySetNext()
-kotlinx.coroutines.internal.CoroutineExceptionHandlerImplKt$$InternalSyntheticServiceLoad$30$79e821495a49326bfa6fc667be65c7554531936364d5f3c1a7414c4d2239ecfd$0
+kotlinx.coroutines.internal.CoroutineExceptionHandlerImplKt$$InternalSyntheticServiceLoad$29$79e821495a49326bfa6fc667be65c7554531936364d5f3c1a7414c4d2239ecfd$0
 kotlinx.coroutines.internal.CoroutineExceptionHandlerImplKt:
     public static final void propagateExceptionFinalResort(java.lang.Throwable)
 kotlinx.coroutines.internal.CtorCache
@@ -7777,7 +7792,7 @@ kotlinx.coroutines.internal.MainDispatcherFactory:
     public abstract kotlinx.coroutines.MainCoroutineDispatcher createDispatcher()
     public abstract int getLoadPriority()
     public abstract java.lang.String hintOnError()
-kotlinx.coroutines.internal.MainDispatcherLoader$$InternalSyntheticServiceLoad$30$f276d930127bf31abac2a96b511517f3813786351b5e8dbb96d98e1e1a616b27$0
+kotlinx.coroutines.internal.MainDispatcherLoader$$InternalSyntheticServiceLoad$29$f276d930127bf31abac2a96b511517f3813786351b5e8dbb96d98e1e1a616b27$0
 kotlinx.coroutines.internal.MainDispatcherLoader:
     public static final boolean FAST_SERVICE_LOADER_ENABLED
     public static final kotlinx.coroutines.internal.MainDispatcherLoader INSTANCE
@@ -7799,12 +7814,12 @@ kotlinx.coroutines.internal.SystemPropsKt:
     public static final boolean systemProp(java.lang.String,boolean)
     public static synthetic long systemProp$default(java.lang.String,long)
 kotlinx.coroutines.internal.SystemPropsKt__SystemProps_commonKt
-kotlinx.coroutines.internal.ThreadContextKt$$InternalSyntheticThrowCCEIfNotNull$144$1ee19909515af0f28c6f304360054863cebaf72e7ccaf0cac15bac2d9fe1985c$0
+kotlinx.coroutines.internal.ThreadContextKt$$InternalSyntheticThrowCCEIfNotNull$137$1ee19909515af0f28c6f304360054863cebaf72e7ccaf0cac15bac2d9fe1985c$0
 kotlinx.coroutines.internal.ThreadContextKt$countAll$1:
     public static java.lang.Object invoke$5()
 kotlinx.coroutines.internal.ThreadContextKt$findOne$1:
     public static void invoke$2()
-kotlinx.coroutines.internal.ThreadContextKt$updateState$1$$InternalSyntheticThrowCCEIfNotNull$182$3ff7ef4e574584d34e294bf8ac548819e9de353a79a9bbbdd8ea1b7dd939fd97$0
+kotlinx.coroutines.internal.ThreadContextKt$updateState$1$$InternalSyntheticThrowCCEIfNotNull$178$3ff7ef4e574584d34e294bf8ac548819e9de353a79a9bbbdd8ea1b7dd939fd97$0
 kotlinx.coroutines.internal.ThreadContextKt$updateState$1:
     public static kotlinx.coroutines.internal.ThreadState invoke()
 kotlinx.coroutines.internal.ThreadContextKt:
@@ -7892,7 +7907,7 @@ kotlinx.coroutines.sync.MutexImpl$CancellableContinuationWithOwner:
     public static void resume()
     public final void resume(java.lang.Object,kotlin.jvm.functions.Function1)
     public static java.lang.Object tryResume()
-kotlinx.coroutines.sync.MutexImpl$onSelectCancellationUnlockConstructor$1$$InternalSyntheticThrowCCEIfNotNull$12$e634a1efc9f9d19efdc51a8311cdeb4ba5af9b8a819fdd49e70289097aecd006$0
+kotlinx.coroutines.sync.MutexImpl$onSelectCancellationUnlockConstructor$1$$InternalSyntheticThrowCCEIfNotNull$11$e634a1efc9f9d19efdc51a8311cdeb4ba5af9b8a819fdd49e70289097aecd006$0
 kotlinx.coroutines.sync.MutexImpl$onSelectCancellationUnlockConstructor$1$1
 kotlinx.coroutines.sync.MutexImpl$onSelectCancellationUnlockConstructor$1
 kotlinx.coroutines.sync.MutexImpl:
@@ -7908,8 +7923,8 @@ kotlinx.coroutines.sync.SemaphoreImpl$$InternalSyntheticBackportWithForwarding$1
 kotlinx.coroutines.sync.SemaphoreImpl$$InternalSyntheticBackportWithForwarding$1$52312df87efbfafaa95c65d52ac4de5105bf7140041f2fd453795807adeeeff9$2
 kotlinx.coroutines.sync.SemaphoreImpl$$InternalSyntheticBackportWithForwarding$1$a555d7479488bd56b39c138c2bf88cf9681203470abc8bf5b0f0fe3053e2273b$0
 kotlinx.coroutines.sync.SemaphoreImpl$$InternalSyntheticBackportWithForwarding$1$a555d7479488bd56b39c138c2bf88cf9681203470abc8bf5b0f0fe3053e2273b$1
-kotlinx.coroutines.sync.SemaphoreImpl$$InternalSyntheticThrowCCEIfNotNull$101$52312df87efbfafaa95c65d52ac4de5105bf7140041f2fd453795807adeeeff9$0
-kotlinx.coroutines.sync.SemaphoreImpl$$InternalSyntheticThrowCCEIfNotNull$33$05872729c719b1dc8c6d1b9868544037b96ccbc3e5ea488fe77d51a2ef86e386$0
+kotlinx.coroutines.sync.SemaphoreImpl$$InternalSyntheticThrowCCEIfNotNull$32$05872729c719b1dc8c6d1b9868544037b96ccbc3e5ea488fe77d51a2ef86e386$0
+kotlinx.coroutines.sync.SemaphoreImpl$$InternalSyntheticThrowCCEIfNotNull$86$52312df87efbfafaa95c65d52ac4de5105bf7140041f2fd453795807adeeeff9$0
 kotlinx.coroutines.sync.SemaphoreImpl$addAcquireToQueue$createNewSegment$1:
     public final kotlinx.coroutines.sync.SemaphoreSegment invoke()
 kotlinx.coroutines.sync.SemaphoreImpl$onCancellationRelease$1:

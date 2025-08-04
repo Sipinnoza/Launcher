@@ -1,10 +1,15 @@
 package com.znliang.launcher.main
 
+import android.content.Context
 import android.content.Intent
+import android.view.View
+import android.widget.Toast
+import androidx.appcompat.widget.PopupMenu
 import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.znliang.launcher.AppLoader
+import com.znliang.launcher.R
 import com.znliang.launcher.tags.model.AppInfo
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -21,6 +26,12 @@ class MainViewModel(private val appLoader: AppLoader) : ViewModel() {
             is MainIntent.SearchQueryChanged -> searchApps(intent.query)
             is MainIntent.LaunchApp -> { launchApp(intent.app) }
             is MainIntent.PageStateChanged -> { pageStateChanged(intent.tagZoomIn) }
+            is MainIntent.LongPress -> {
+                handleLongPress(
+                    app = intent.app,
+                    context = intent.context,
+                    anchor = intent.anchor)
+            }
         }
     }
 
@@ -46,7 +57,11 @@ class MainViewModel(private val appLoader: AppLoader) : ViewModel() {
 
     private fun launchApp(app: AppInfo) {
         viewModelScope.launch {
-            _state.value = _state.value.copy(searchQuery = "")
+            _state.value = _state.value.copy(
+                searchQuery = "",
+                isResultVisible = false,
+                isSearchVisible = false
+            )
         }
         try {
             val intent = Intent().apply {
@@ -59,5 +74,25 @@ class MainViewModel(private val appLoader: AppLoader) : ViewModel() {
 
     private fun pageStateChanged(tagZoomIn: Boolean) {
         _state.value = _state.value.copy(isSearchVisible = tagZoomIn, searchQuery = "", isResultVisible = false)
+    }
+
+    private fun handleLongPress(app: AppInfo, context: Context, anchor: View) {
+        val popup = PopupMenu(context, anchor)
+        popup.menuInflater.inflate(R.menu.app_long_press_menu, popup.menu)
+
+        popup.setOnMenuItemClickListener {
+            when (it.itemId) {
+                R.id.menu_uninstall -> {
+                    Toast.makeText(context, "menu_uninstall尚未实现", Toast.LENGTH_SHORT).show()
+                    true
+                }
+                R.id.menu_add_widget -> {
+                    Toast.makeText(context, "menu_uninstall尚未实现", Toast.LENGTH_SHORT).show()
+                    true
+                }
+                else -> false
+            }
+        }
+        popup.show()
     }
 }

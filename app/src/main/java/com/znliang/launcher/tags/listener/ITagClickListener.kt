@@ -2,6 +2,7 @@ package com.znliang.launcher.tags.listener
 
 import android.view.View
 import android.view.ViewGroup
+import com.znliang.launcher.tags.model.AppInfo
 
 /**
  * @description:
@@ -10,5 +11,8 @@ import android.view.ViewGroup
  * @version
  */
 interface ITagClickListener {
-    fun onItemClick(parent: ViewGroup?, view: View?, position: Int)
+
+    fun onItemClick(app: AppInfo)
+
+    fun onItemLongPress(app: AppInfo)
 }
