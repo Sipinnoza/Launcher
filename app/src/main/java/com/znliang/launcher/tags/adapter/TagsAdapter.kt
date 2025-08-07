@@ -3,6 +3,7 @@ package com.znliang.launcher.tags.adapter
 import android.content.Context
 import android.view.View
 import android.view.ViewGroup
+import com.znliang.launcher.tags.model.AppInfo
 
 abstract class TagsAdapter {
 
@@ -16,5 +17,6 @@ abstract class TagsAdapter {
 
     abstract fun onThemeColorChanged(view: View?, themeColor: Int, alpha: Float)
 
+    abstract fun updateView(list: List<AppInfo>)
 }
 

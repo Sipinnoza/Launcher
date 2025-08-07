@@ -2,6 +2,7 @@
 *.iml
 *.class
 .idea
+.kotlin
 
 # Android Studio
 .gradle
@@ -15,6 +16,7 @@
 **/test/
 **/androidTest/
 /app/release
+/app/build
 
 # NDK
 obj/

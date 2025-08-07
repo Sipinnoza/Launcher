@@ -1,29 +1,23 @@
 package com.znliang.launcher.main
+
 import android.app.ActivityManager
-import android.content.Context
-import android.graphics.Rect
-import android.os.Build
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
-import android.window.OnBackInvokedCallback
-import android.window.OnBackInvokedDispatcher
-import androidx.activity.BackEventCompat
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.SearchView
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.znliang.launcher.AppLoader
+import com.znliang.launcher.LauncherApplication
+import com.znliang.launcher.appdata.AppLoader
 import com.znliang.launcher.R
 import com.znliang.launcher.search.SearchAppListAdapter
 import com.znliang.launcher.tags.adapter.AppAdapter
@@ -37,7 +31,8 @@ import kotlin.math.abs
 class MainActivity : AppCompatActivity() {
 
     private val viewModel: MainViewModel by viewModels {
-        MainViewModelFactory(AppLoader(this, packageManager))
+        val app = application as LauncherApplication
+        MainViewModelFactory(AppLoader(this, packageManager, app.appInfoDao))
     }
 
     private lateinit var rootView: ViewGroup
@@ -51,15 +46,8 @@ class MainActivity : AppCompatActivity() {
     private var touchStartY = 0f
     private val swipeThreshold = 30f
 
-    private val packageChangedReceiver = object : android.content.BroadcastReceiver() {
-        override fun onReceive(context: Context, intent: android.content.Intent) {
-            val action = intent.action
-            if (action == android.content.Intent.ACTION_PACKAGE_ADDED ||
-                action == android.content.Intent.ACTION_PACKAGE_REMOVED) {
-                viewModel.processIntent(MainIntent.LoadApps)
-            }
-        }
-    }
+    // temp data
+    private val clickAppList = mutableListOf<AppInfo>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -75,12 +63,16 @@ class MainActivity : AppCompatActivity() {
                     val adapter = AppAdapter(state.appList, object : ITagClickListener {
                         override fun onItemClick(app: AppInfo) {
                             viewModel.processIntent(MainIntent.LaunchApp(app))
+                            clickAppList.add(app)
                         }
                         override fun onItemLongPress(app: AppInfo) {
                             viewModel.processIntent(MainIntent.LongPress(app, this@MainActivity, tagContainer))
                         }
                     })
                     tagCloudView.setAdapter(adapter)
+                } else {
+                    (tagCloudView.getAdapter() as? AppAdapter)?.updateView(clickAppList.toList())
+                    clickAppList.clear()
                 }
                 if (state.isSearchVisible) {
                     searchView.visibility = View.VISIBLE

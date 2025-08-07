@@ -8,7 +8,7 @@ import com.znliang.launcher.tags.model.AppInfo
 
 class AppAdapter(private var tags: List<AppInfo>, private val onTagClickListener: ITagClickListener? = null) : TagsAdapter() {
 
-    private val viewCache = mutableMapOf<AppInfo, View>()
+    private val viewCache = mutableMapOf<String, AppItemViewHolder>()
 
     override val count: Int
         get() = tags.size
@@ -17,18 +17,17 @@ class AppAdapter(private var tags: List<AppInfo>, private val onTagClickListener
         val ctx = context ?: return View(parent?.context)
         val app = tags[position]
 
-        viewCache[app]?.let { cachedView ->
-            return cachedView
+        viewCache[app.packageName]?.let { cachedView ->
+            return cachedView.getView()
         }
 
         val holder = AppItemViewHolder.create(ctx)
         holder.bind(app)
 
-        val newView = holder.getView()
-        addListener(newView, app)
-        viewCache[app] = newView
+        addListener(holder, app)
+        viewCache[app.packageName] = holder
 
-        return newView
+        return holder.getView()
     }
 
     override fun getItem(position: Int): Any = tags[position]
@@ -39,11 +38,18 @@ class AppAdapter(private var tags: List<AppInfo>, private val onTagClickListener
         view?.alpha = alpha
     }
 
+    override fun updateView(list: List<AppInfo>) {
+        list.forEach { tag ->
+            viewCache[tag.packageName]?.bind(tag)
+        }
+    }
+
 
     /**
      * 为 Tag 视图添加点击事件监听器（仅在未设置的情况下）。
      */
-    private fun addListener(view: View, app: AppInfo) {
+    private fun addListener(hodler: AppItemViewHolder, app: AppInfo) {
+        val view = hodler.getView()
         if (!view.hasOnClickListeners()) {
             onTagClickListener?.let { listener ->
                 view.setOnClickListener {

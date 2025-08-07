@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/menu_uninstall" android:title="卸载应用" />
-    <item android:id="@+id/menu_add_widget" android:title="添加桌面小部件" />
-</menu>
