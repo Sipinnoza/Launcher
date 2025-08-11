@@ -4,6 +4,7 @@ package com.znliang.launcher.tags.tag
 import android.annotation.SuppressLint
 import android.content.Context
 import android.util.AttributeSet
+import android.util.Log
 import android.view.Choreographer
 import android.view.MotionEvent
 import android.view.ViewConfiguration
@@ -243,11 +244,13 @@ class TagCloudView @JvmOverloads constructor(
             val child = tag.view ?: continue
             if (child.visibility != VISIBLE) continue
 
+            child.isEnabled = tag.alpha >= 0.85f
             adapter?.onThemeColorChanged(child, tag.color, tag.alpha)
 
             if (abs(child.scaleX - tag.scale) > 0.01f) {
                 child.scaleX = tag.scale
                 child.scaleY = tag.scale
+                child.translationZ = tag.scale
             }
 
             val left = (centerX + tag.flatX - child.measuredWidth / 2).toInt()
