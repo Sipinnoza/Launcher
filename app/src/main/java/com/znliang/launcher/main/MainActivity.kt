@@ -164,6 +164,18 @@ class MainActivity : AppCompatActivity() {
                     }
                     true
                 }
+                MotionEvent.ACTION_CANCEL -> {
+                    viewModel.processIntent(MainIntent.PageStateChanged(false))
+                    val imm = v.context.getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+                    imm.hideSoftInputFromWindow(v.windowToken, 0)
+                    tagContainer.animate()
+                        .scaleX(1f)
+                        .scaleY(1f)
+                        .setDuration(300)
+                        .start()
+                    isZoomOut = true
+                    true
+                }
                 else -> false
             }
         }

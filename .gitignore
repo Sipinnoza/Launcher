@@ -1,40 +1,58 @@
-# Kotlin & Java
-*.iml
-*.class
-.idea
+# ---------------------------------
+# Android / Kotlin Standard .gitignore
+# ---------------------------------
+
+# Gradle
+.gradle/
+build/
+!gradle-wrapper.jar
+
+# Local configuration
+local.properties
 
 # Android Studio
-.gradle
-/local.properties
-/.idea/*
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# macOS
 .DS_Store
-/build
-/captures
-.cxx
-.externalNativeBuild
-**/test/
-**/androidTest/
-/app/release
 
 # NDK
 obj/
-*.so
 
-# OS
-Thumbs.db
-ehthumbs.db
+# Tests
+**/test/
+**/androidTest/
 
 # Logs
 *.log
 
-# Others
+# APK / AAB
 *.apk
 *.ap_
+*.aab
 
-# Generated files
+# Misc
+captures/
+externalNativeBuild/
+.cxx/
+
+# Keystore (不要提交签名文件)
+*.jks
+*.keystore
+
+# Generated
 gen/
 out/
 
-# Keystore
-*.jks
-*.keystore
+# Crashlytics
+fabric.properties
+
+# Ignore intermediates
+app/build/
+*/build/
+
+# Jetpack Compose
+*.kotlin_metadata
