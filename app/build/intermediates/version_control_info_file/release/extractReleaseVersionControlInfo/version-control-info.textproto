@@ -1,1 +1,5 @@
-generate_error_reason: NO_SUPPORTED_VCS_FOUND
+repositories {
+  system: GIT
+  local_root_path: "$PROJECT_DIR"
+  revision: "a64773fe6dc17d4995ed4d0ebda2c67b2bdddc3f"
+}

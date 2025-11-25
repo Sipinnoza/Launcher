@@ -27,6 +27,6 @@
       applicationId="com.znliang.launcher"
       generatedSourceFolders="build/generated/ap_generated_sources/release/out"
       generatedResourceFolders="build/generated/res/resValues/release"
-      desugaredMethodsFiles="/home/zeus/.gradle/caches/8.13/transforms/0a154ab175963982fa34297ad3efcec6/transformed/D8BackportedDesugaredMethods.txt">
+      desugaredMethodsFiles="/Users/spinoza/.gradle/caches/8.13/transforms/0a154ab175963982fa34297ad3efcec6/transformed/D8BackportedDesugaredMethods.txt">
   </artifact>
 </variant>

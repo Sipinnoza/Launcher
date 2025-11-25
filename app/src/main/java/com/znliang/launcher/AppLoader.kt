@@ -57,7 +57,6 @@ class AppLoader(val context: Context, private val packageManager: PackageManager
     fun applyDefaultBlackList() {
         val defaultList = listOf(
             "com.znliang.launcher",
-            "cn.soulapp.android",
             "com.android.stk"
         )
         val set = getBlackList().toMutableSet()
